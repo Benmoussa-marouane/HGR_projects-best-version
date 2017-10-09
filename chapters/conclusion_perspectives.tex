@@ -1,0 +1,22 @@
+\chapter*{Conclusion and Perspective}
+
+In this work, we succeed in building an HGR system that is able to detect the presence of two hands, to recognize the meanings of a gesture  in a predefined vocabulary. The lighting conditions, signers skin colours and clothing, and background  have little impact on the performance of this HGR system. 
+In this project we used Microsoft kinect for data acquisition of depth images. At  First we were focusing on giving the user a better experience by tracking and  detecting the hand  in a range of [80cm , 3 meters]  allowing the  user to move freely around the camera. then we extract features using two powerful descriptors SIFT(Scale Invariant Features Transform) and SURF(Speeded Up Robust Features) a  third descriptor(Fourier shape descriptor)  was added to complete the requirement of a robust HGR system. having our stable keypoints that are invariant to scale and rotation  we used machine learning algorithms SVM, K-means and Nearest Neighbors  to classify our  16 gestures. afterwards we generate a codebook based on the keypoint of sift and surf,we also did  a comparative study between sift and surf performance's based on their generalization performance, Finally we conclude that surf outperform sift with an Average AUC of 98\% with RBF kernel against 91\% for sift, the only problem with these two descriptors is that they are computationally expensive which blocks their application on rela time applications,Hence the need for a fast descriptor such as fourier descriptor.
+
+\begin{itemize}
+    \item this application can detect  in a minimum range of 80 cm and maximum range of 2 and half meters until 3 meters.
+    \item The application is optimized and make no calculation or classification if there is no \textbf{Human body} in front of the camera, the program starts only when u make a gesture to recognize the human skeleton.
+    \item A powerful CPU or  GPU can make  sift and surf descriptors along with BOF algorithm to work fine especially with the recent implementations of OpenCV for SURF GPU and SIFT GPU.
+    \item the project is extendable in term of adding any new gestures to the vocabularies (as long as  they have a different shape).
+    \item Kinect Version 1 (used for this project) gives limited depth range of 3 meters (theoretically 4 meters),and gives false hands positions  especially if the hands cross. he error increases respectively with depth.  To the author  best knowledge the Kinect version 2 gives more depth range until 8 meters and uses good filters for to stabilize body joints positions. 
+    \item the hands images taken by the camera were only of an individual person, which is the author of this project, this can probably causes our application to overfit a little bit, but this problem can be easily solved with if we shoot with  the different persons with different shape of hands and to account for the different ways that people might perform those gestures.this will help a lot in boosting the generalization performance of our application.
+   
+\end{itemize}
+
+
+This project was an opportunity to apply the different knowledge acquired during our studies in the IST master; especially as we have deepened our knowledge in the field of computer vision by applying image processing techniques using the OPENCV library. We also learned new skills at programming with the Kinect SDK. Moreover; this work allowed us to master some of Machine learning aspects as well as learning the necessary steps to have a good performance of generalization.
+
+
+Our application performs the recognition of the static gestures of the both  hands. Thereby It is very important to deepen this work by recognizing the gestures dynamically in order to establish a system that is able to translate the sign language into a natural language and include Text To Speech (TTS) protocol. 
+
+

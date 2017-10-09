@@ -1,0 +1,224 @@
+
+\documentclass[11pt]{report}           %% ceci est un commentaire (apres le caractere %)
+%\usepackage[ landscape, margin=1in]{geometry}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\setlength{\parskip}{1em}
+\renewcommand{\baselinestretch}{1.6}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,245mm},
+ left=20mm,
+ top=30mm,
+ }
+ 
+\usepackage{relsize}
+ 
+\usepackage{amsthm}
+\usepackage{array}
+\usepackage{breqn}
+\usepackage{amsmath}
+\usepackage[ruled,vlined,linesnumbered,noresetcount]{algorithm2e}
+\usepackage{algpseudocode}
+\usepackage{dsfont}
+\usepackage{tabu}
+\usepackage{graphicx}
+\graphicspath{ {img/} }
+%\graphicspath{ {figures/} }
+\usepackage{float}
+\usepackage[justification=centering]{subfig}
+\usepackage[colorlinks]{hyperref}
+\usepackage{hyperref} 
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+%\usepackage{algorithm}
+%\usepackage{algpseudocode}
+\usepackage{algorithm2e}
+\usepackage{wrapfig}
+\usepackage{listings}
+\usepackage{caption}
+%\usepackage{array,multirow,makecell}
+%\setcellgapes{1pt}
+%\makegapedcells
+ \usepackage{multirow}
+\usepackage{tabularx}
+\usepackage{bm}
+ %\renewcommand{\familydefault}{\sfdefault}
+ 
+% \renewcommand{\familydefault}{\rmdefault}
+
+\usepackage{lmodern}
+\begin{document}
+
+
+
+%\maketitle\thispagestyle{empty}
+
+\begin{abstract}
+Our work revolves around the recognition of both hands  gesture in Real time using the kinect sensor and machine learning. At first we acquired depth image of the kinect, based on the depth data we used its advantage to detect And perform gesture by  Considering that the minimum depth from the sensor  is the hand region, since the hand gestures are  usually held in front of  the body, this  allows us to track the hand and also it gives  the user more  mobility around the sensor rather than working in a certain closed and predefined range. After that we have developed an algorithm for gesture classification using SIFT (Scale Invariant Features Transform ) and SURF (Speeded up robust features ) descriptors  with Bag of Visual words approach to Quantify the keypoints Features, this approach consumes a great amount of time and memory affecting the efficiency and speed of our Robust HGR  system. however the second algorithm is Fourier descriptor which was developed to meet real time requirements.
+
+These two approaches  were used to classify 16 Gestures using  three Machine Learning algorithms (Support vector Machine with K-means  and Nearest Neighbors classifier )    
+
+\end{abstract}
+
+
+%content
+\tableofcontents
+\listoffigures
+\listoftables
+
+\include{chapters/chapter0}
+\include{chapters/chapter1}
+\include{chapters/chapter2}
+\include{chapters/chapter3}
+\include{chapters/chapter4}
+\include{chapters/conclusion_perspectives}
+
+
+\appendix
+\include{appendices/appendiceKinect}
+\include{appendices/appendiceOpencv}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\medskip
+
+
+
+\begin{thebibliography}{80}
+
+
+\bibitem{20}D. S. Zhang and G. J. Lu. A Comparative Study on Shape Retrieval
+Using Fourier Descriptors with Different Shape Signatures. In Proc. Int.
+Conference on Multimedia and Distance Education. Fargo, ND, USA,
+pp.1-9, June 2001. 
+\bibitem{21}
+Kai Guo; Ishwar, P.; Konrad, J., "Action Recognition in Video by Covariance
+Matching of Silhouette Tunnels," Computer Graphics and Image Processing
+(SIBGRAPI), 2009 XXII Brazilian Symposium on , vol., no., pp.299,306, 11-15 Oct.
+2009 
+
+
+\bibitem{27} H. Cooper, B. Holt, and R. Bowden, “Sign language recognition,” in in Visual Analysis of
+Humans, Springer, 2011, pp. 539–562. 
+
+
+
+\bibitem{29} T. Takahashi and F. Kishino, “Hand gesture coding based on experiments using a hand
+gesture interface device,” ACM SIGCHI Bull., vol. 23, no. 2, pp. 67–74, 1991. 
+
+
+
+\bibitem{31}T. K., “Glove lends the deaf a hand,” USA Today, 2002. [Online]. Available:
+http://www.usatoday.com/news/science/2002-01-16-deafglove.htm. [Accessed: 01-Dec2013].
+
+\bibitem{32} T. Starner and A. Pentland, “Real-time american sign language recognition from video
+using hidden markov models,” in in Motion-Based Recognition, Springer, 1997, pp. 227–
+243. 
+
+\bibitem{33}
+ T. Starner, J. Weaver, and A. Pentland, “Real-time american sign language recognition
+using desk and wearable computer based video,” Pattern Anal. Mach. Intell. IEEE Trans.,
+vol. 20, no. 12, pp. 1371–1375, 1998. 
+
+\bibitem{35}
+Z. Ren, J. Meng and J. Yuan, "Depth camera based hand gesture recognition and its applications in Human-Computer-Interaction," 2011 8th International Conference on Information, Communications and Signal Processing, Singapore, 2011, pp. 1-5.
+
+\bibitem{36} P. Vijay and N. Suhas, “Recent Developments in Sign Language Recognition: A Review,”
+irdindia.in, no. 2, pp. 21–26, 2012. 
+ 
+\bibitem{39}M. Majid and J. Zain, “A REVIEW ON THE DEVELOPMENT OF INDONESIAN SIGN
+LANGUAGE RECOGNITION SYSTEM,” J. Comput. Sci., vol. 9, no. 11, pp. 1496–
+1505, 2013. 
+
+\bibitem{krig}
+Krig S. Interest Point Detector and Feature Descriptor Survey. In: Computer Vision Metrics. Springer; 2014. p. 217–282.
+
+
+
+\bibitem{lowe}
+Lowe, David G. (1999). "Object recognition from local scale-invariant features" (PDF). Proceedings of the International Conference on Computer Vision. 2. pp. 1150–1157. doi:10.1109/ICCV.1999.790410.
+
+
+
+\bibitem{47} D. Capilla, “Sign Language Translator using Microsoft Kinect XBOX 360 TM,” 2012. 
+
+
+\bibitem{dardas}
+N. Dardas, Q. Chen, N. D. Georganas and E. M. Petriu, "Hand gesture recognition using Bag-of-features and multi-class Support Vector Machine," 2010 IEEE International Symposium on Haptic Audio Visual Environments and Games, Phoenix, AZ, 2010, pp. 1-5.
+
+
+\bibitem{MM} Tuytelaars, T., Mikolajczyk, K.: Local invariant feature detectors: a survey. Found. Trends
+Comput. Graph. Vis. 3(3), 177–280 (2007)
+
+
+
+
+\bibitem{f} Crowley, James L., and Alice C. Parker, “A representation
+for shape based on peaks and ridges in the difference of lowpass transform,”
+IEEE Trans. on Pattern Analysis and Ma-
+chine Intelligence,
+6, 2 (1984), pp. 156–170.
+
+\bibitem{e}Lindeberg, Tony, “Detecting salient blob-like image structures and their scales with a scale-space primal sketch:
+a method for focus-of-attention,”
+International Journal of
+Computer Vision,
+11, 3 (1993), pp. 283–318.
+
+
+
+\bibitem{h} Oliva, A., Torralba, A.: Modeling the shape of the scene: a holistic representation of the spatial
+envelope. Int. J. Comput. Vis. 42(3), 145–175 (2001)
+\bibitem{i} Bianco, S., Mazzini, D., Pau, D., Schettini, R.: Local detectors and compact descriptors for
+visual search: a quantitative comparison. Digital Signal Process. 44, 1–13 (2015)
+\bibitem{k} Jégou, H., Perronnin, F., Douze, M., Sánchez, J., Pérez, P., Schmid, C.: Aggregating local
+descriptors into a compact codes. IEEE Trans. Pattern Anal. Mach. Intell. 34(9), 1704–1716
+(2012)
+\bibitem{kinect}
+Microsoft, “Kinect for Windows Sensor Components and Specifications.” [Online]. Available: \url{http://msdn.microsoft.com/en-us/library/jj131033.aspx}Accessed: 06-Dec-2013 ]
+
+\bibitem{kinect1}
+ Microsoft, “Kinect Fact Sheet,” 2010. [Online]. Available: \url{www.microsoft.com/enus/news/presskits/xbox/docs/kinectfs.docx}.
+\bibitem{kinect15}
+M. Andersen, T. Jensen, and P. Lisouski, “Kinect depth sensor evaluation for computer
+vision applications,” 2012.
+\bibitem{kinect17}
+Microsoft, “Kinect for Windows - Human Interface Guidelines.” [Online]. Available:
+\url{http://msdn.microsoft.com/en-us/library/jj663791.aspx}.
+\bibitem{kinect18}
+J. Webb and J. Ashley, Beginning Kinect Programming with the Microsoft Kinect SDK.
+Apress, 2012
+\bibitem{kinect20}
+Microsoft, “Coordinate Space.” [Online]. Available: \url{http://msdn.microsoft.com/enus/library/hh973078.aspx#Depth\_Ranges}.
+[Accessed: 06-Dec-2013].
+
+\bibitem{clif}
+C. Chan, S. S. Mirfakhrae, “ Hand Gesture Recognition using
+Kinect”, Bchelor Thesis, Boston University Department of
+Electrical and Computer Engineering ,Boston, Dec 13, 2013.
+\bibitem{kmeans}
+J. B. MacQueen (1967): "Some Methods for classification and Analysis of Multivariate Observations, Proceedings of 5-th Berkeley Symposium on Mathematical Statistics and Probability", Berkeley, University of California Press, 1:281-297
+\bibitem{Arthur} 
+Arthur, D.; Vassilvitskii, S. (2007). "k-means++: the advantages of careful seeding" (PDF). Proceedings of the eighteenth annual ACM-SIAM symposium on Discrete algorithms. Society for Industrial and Applied Mathematics Philadelphia, PA, USA. pp. 1027–1035.
+
+\bibitem{svm}
+Hill, T.,  Lewicki, P. (2006). Statistics Methods and applications : a comprehensive reference for science, industry, and data mining. Tulsa, Okla: StatSoft.
+
+\bibitem{wfd}
+ "FAQ". World Federation of the Deaf. Retrieved 17 August 2013.
+ 
+ 
+\end{thebibliography}
+
+
+
+\end{document}
